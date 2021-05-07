@@ -17,6 +17,7 @@ To pass the kata you will have to follow the steps one by one, by modifying the 
 ## Instructions
 * Use exactly one commit for each step 
 * Your code should follow clean code best practices
+* Your code should be unit tested (100% Coverage)
 * Your branch should be named following this pattern "kata/<firstname_lastname>"
 
 Feel free to describe your work in the pull request
