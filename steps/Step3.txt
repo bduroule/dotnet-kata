@@ -1,0 +1,35 @@
+Gladiators can fight with their hands, but it would be better with weapons !
+
+Step3 Requirements :
+
+- A weapon has a Name.
+ - - Name | string,  must not be null nor empty, lenght between 3 to 15 chars
+ 
+- A weapon has an AttackModifier 
+ - - strictly positive float
+ 
+ 
+- There are three weapons 
+ - Named Fork, AttackModifier : 1.10
+ - Name Club , AttackModifier : 1.50
+ - Name Sword , AttackModifier : 2.00
+ 
+- A gladiator can equip a weapon
+ - - During a fight, just before attacking, a gladiator tries to loot a weapon on the ground. 
+ - - Use the External WeaponLooter class to get the correct weapon.
+ - - A gladiator can only equip one weapon at a time, if a gladiator equips a new weapon, the old one is removed
+ - - A gladiator will only equip a weapon if he has no weapon or if the current  weapon AttackModifier is lower than its current equiped weapon
+ - - when a gladiator equips a weapon, the AttackModifier of the weapon is multiplied to the damage dealt by an Attack (rounded up to the next whole number).
+ 
+- At the  end of the fight, gladiators lose their weapon.
+
+Step 3 Instructions
+Following requirements : update the program so that it uses the weapon mechanism
+ 
+
+
+Instructions Reminder :
+Use exactly one commit for each step
+Your code should follow clean code best practices
+Your code should be unit tested (100% Coverage)
+Your branch should be named following this pattern "kata/<firstname_lastname>"

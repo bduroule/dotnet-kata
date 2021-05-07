@@ -10,14 +10,16 @@ To pass the kata you will have to follow the steps one by one, by modifying the 
 ## To pass the kata
 1. Clone the repository
 2. Read instructions
-3. Follow the steps in the ascending order
-4. Submit a pull request with your changes
+3. Create a branch locally
+4. Follow the steps in the ascending order
+5. Push your branch
+6. Submit a pull request with your branch
 
 
 ## Instructions
 * Use exactly one commit for each step 
 * Your code should follow clean code best practices
-* Your code should be unit tested (100% Coverage)
+### * Your code should be unit tested (100% Coverage)
 * Your branch should be named following this pattern "kata/<firstname_lastname>"
 
 Feel free to describe your work in the pull request

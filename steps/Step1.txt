@@ -1,0 +1,44 @@
+Welcome to the arena ! We want to develop a game where gladiators fight with each other
+
+The actual solution contains :
+- Gladiators class Library
+ - - this is where you want to code your functionalities
+- Gladiators.Tests test project
+ - - this is where you want to write your unit tests
+- Gladiators.ConsoleApp
+ - - this is where you write your programs
+- Gladiators.External
+ - - Some code you cannot modify.
+ 
+Step1 Requirements :
+- A gladiator has a Name.
+ - - Name | string,  must not be null nor empty, lenght between 3 to 15 chars
+ 
+- A gladiator has HealthPoints.
+ - - HealthPoints | integer,  must always be greater or equal to zero.
+
+- A gladiator has Attack.
+ - - Attack | integer,  must always be greater or equal to zero.
+ 
+- A gladiator can deal damage
+ - - returns damage | integer,  must always be greater or equal to zero.
+ - - damage equals to Attack * attackModifier (rounded up to the next whole number).
+ - - attackModifier being a rolled value from 0.8 to 1.2 using a uniform distribution
+
+
+- A gladiator can take damage
+ - - param damage | integer,  must always be greater or equal to zero.
+ - - taking damages reduces HealthPoints by its amount
+ 
+- When a gladiator HealthPoints reaches zero, he dies.
+ - - IsDead boolean
+ 
+Step 1 Instructions :
+Following requirements : Write a program that creates a gladiator. Make him receive damages until he dies
+ 
+
+Instructions Reminder :
+Use exactly one commit for each step
+Your code should follow clean code best practices
+Your code should be unit tested (100% Coverage)
+Your branch should be named following this pattern "kata/<firstname_lastname>"

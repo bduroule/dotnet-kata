@@ -1,0 +1,29 @@
+We now have a nice gladiator mecanism. Let's add an Arena so that gladiators can fight with each others !
+
+Step2 Requirements :
+- Gladiators can join a Fight
+ - - A Fight can have up to Two gladiators
+ - - A dead gladiator cannot join a Fight
+
+- a Fight can be started
+ - - Fight can be started only when two gladiators are in.
+
+- When a fight is started the gladiators attack each other alternativaly until the fight ends
+ - - the first gladiator to attack is decided randomly with a uniform distribution
+
+- a Fight ends when
+ - - One of the gladiators HealthPoints dies
+
+- when a Fight ends, an outcome is decided.
+ - - the gladiator with the highest remaining healthpoints is the winner
+ - - the other gladiator is the loser
+ 
+Step 2 Instructions
+Following requirements : update the program so that it creates two gladiators, that fight, and  display the winner.
+ 
+
+Instructions Reminder :
+Use exactly one commit for each step
+Your code should follow clean code best practices
+Your code should be unit tested (100% Coverage)
+Your branch should be named following this pattern "kata/<firstname_lastname>"
