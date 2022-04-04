@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Gladiator.External;
 
 namespace Gladiators.Entities
 {
@@ -11,6 +12,17 @@ namespace Gladiators.Entities
             this.Name = name;
             this.HealthPoints = healthPoints;
             this.Attack = attack;
+            InitDictionary();
+        }
+        WeaponLooter looter = new WeaponLooter();
+        Dictionary<WeaponTypes, Weapon> weapon = new Dictionary<WeaponTypes, Weapon>();
+
+        private void InitDictionary()
+        {
+            weapon.Add(WeaponTypes.Club, new Weapon("Club", (float)1.50));
+            weapon.Add(WeaponTypes.Fork, new Weapon("Fork", (float)1.10));
+            weapon.Add(WeaponTypes.Sword, new Weapon("Sword", (float)2.00));
+            weapon.Add(WeaponTypes.None, new Weapon("None", (float)1d));
         }
         private static Random rand = new Random();
         private double attackModifier = rand.NextDouble() * (1.3 - 0.8) + 0.8;
@@ -48,7 +60,7 @@ namespace Gladiators.Entities
         public int Domage {
             get {
                 if ((int)Math.Ceiling(Attack * attackModifier) >= 0)
-                    return (int)Math.Ceiling(Attack * attackModifier);
+                    return (int)Math.Ceiling((Attack * attackModifier) * weapon[looter.TryLootSomething()].AttackModifier);
                 else
                     throw new Exception("Domage value must be grater or equal to 0");
             }

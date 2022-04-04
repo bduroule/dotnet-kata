@@ -8,4 +8,8 @@
     <Folder Include="Ports\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gladiators.External\Gladiators.External.csproj" />
+  </ItemGroup>
+
 </Project>

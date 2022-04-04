@@ -1,5 +1,7 @@
 ﻿using System;
 using Gladiators.Entities;
+using Gladiator.External;
+using System.Collections.Generic;
 
 namespace Gladiators.ConsoleApp
 {
@@ -14,6 +16,9 @@ namespace Gladiators.ConsoleApp
             Console.WriteLine($"max heal: {maximus.HealthPoints}, brut heal {brutus.HealthPoints}");
 
             Console.WriteLine($"max heal: {area.AreaFight().Name}");
+            Dictionary<WeaponTypes, int> dic  = new Dictionary<WeaponTypes, int>();
+            dic[WeaponTypes.Club] = 1;
+            Console.WriteLine($"test enum {dic[WeaponTypes.Club]}");
         }
     }
 }
