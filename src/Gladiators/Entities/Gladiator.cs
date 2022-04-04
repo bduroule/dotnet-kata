@@ -31,7 +31,7 @@ namespace Gladiators.Entities
                 if (value >= 0)
                     _healthPoints = value;
                 else
-                    throw new Exception("HealthPoints value must be grater or equal to 0");
+                    _healthPoints = 0;
             }
         }
         private int _attack;

@@ -24,10 +24,12 @@ namespace Gladiators.Tests
         public void testHealthPointsPropertie()
         {
             int healthPoints = 10;
+            int negativeHealthPoint = 0;
             GladiatorClass gladiator1 = new GladiatorClass("Maximus", healthPoints, 15);
 
             Assert.Equal(gladiator1.HealthPoints, healthPoints);
-            Assert.Throws<Exception>(() => gladiator1.HealthPoints = -1);
+            gladiator1.HealthPoints = -1;
+            Assert.Equal(gladiator1.HealthPoints, negativeHealthPoint);
         }
 
         [Fact]
