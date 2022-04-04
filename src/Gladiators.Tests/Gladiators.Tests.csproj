@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gladiators\Gladiators.csproj" />
+    <ProjectReference Include="..\Gladiators.External\Gladiators.External.csproj" />
   </ItemGroup>
 
 </Project>
