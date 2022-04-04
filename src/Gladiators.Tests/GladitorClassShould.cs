@@ -1,5 +1,5 @@
 using Xunit;
-using Gladiator.External;
+using Gladiators.Entities;
 using System;
 
 namespace Gladiators.Tests
