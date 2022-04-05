@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Gladiator.External
 {
@@ -7,11 +7,16 @@ namespace Gladiator.External
     /// </summary>
     public sealed class WeaponLooter
     {
-        private Random _random;
+        private IRoll _random;
 
         public WeaponLooter()
         {
             _random = new Random();
+        }
+
+        public WeaponLooter(IRoll random)
+        {
+            _random = random;
         }
 
         public WeaponTypes TryLootSomething()
