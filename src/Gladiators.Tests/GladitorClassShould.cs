@@ -42,15 +42,15 @@ namespace Gladiators.Tests
             Assert.Throws<Exception>(() => gladiator1.Attack = -1);
         }
 
-        /*[Fact]
+        [Fact]
         public void testDomagePropertie()
         {
             GladiatorClass gladiator1 = new GladiatorClass("Maximus", 10, 15);
 
-            Assert.NotNull(gladiator1.Domage);
-            Assert.Throws<Exception>(() => gladiator1.Domage = -1);
-            Assert.Throws<Exception>(() => gladiator1.Domage = 0.7);
-        }*/
+            Assert.NotNull(gladiator1.Damage);
+            Assert.Throws<Exception>(() => gladiator1.Damage = -1);
+            Assert.Throws<Exception>(() => gladiator1.Damage = 0.7);
+        }
 
         [Fact]
         public void testIsDeadPropertie()
