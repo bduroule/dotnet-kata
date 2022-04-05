@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Text;
 using Gladiator.External;
 
@@ -12,18 +11,10 @@ namespace Gladiators.Entities
             this.Name = name;
             this.HealthPoints = healthPoints;
             this.Attack = attack;
-            InitDictionary();
+            _weaponSmith = new WeaponSmith();
         }
         WeaponLooter looter = new WeaponLooter();
-        Dictionary<WeaponTypes, Weapon> weapon = new Dictionary<WeaponTypes, Weapon>();
 
-        private void InitDictionary()
-        {
-            weapon.Add(WeaponTypes.Club, new Weapon("Club", (float)1.50));
-            weapon.Add(WeaponTypes.Fork, new Weapon("Fork", (float)1.10));
-            weapon.Add(WeaponTypes.Sword, new Weapon("Sword", (float)2.00));
-            weapon.Add(WeaponTypes.None, new Weapon("None", (float)1d));
-        }
         private static Random rand = new Random();
         private double attackModifier = rand.NextDouble() * (1.3 - 0.8) + 0.8;
         private string _name;
@@ -47,6 +38,8 @@ namespace Gladiators.Entities
             }
         }
         private int _attack;
+        private readonly IWeaponSmith _weaponSmith;
+
         public int Attack {
             get => _attack;
             set {
@@ -57,12 +50,16 @@ namespace Gladiators.Entities
             }
         }
         // ? just geter
-        public int Domage {
-            get {
+        public int Damage {
+            get
+            {
                 if ((int)Math.Ceiling(Attack * attackModifier) >= 0)
-                    return (int)Math.Ceiling((Attack * attackModifier) * weapon[looter.TryLootSomething()].AttackModifier);
-                else
-                    throw new Exception("Domage value must be grater or equal to 0");
+                {
+                    var weaponType = looter.TryLootSomething();
+                    return (int)Math.Ceiling((Attack * attackModifier) * _weaponSmith.BuildWeapon(weaponType).AttackModifier);
+                }
+
+                throw new Exception("Damage value must be grater or equal to 0");
             }
         }
         public bool IsDead { get => HealthPoints == 0; }
@@ -70,7 +67,7 @@ namespace Gladiators.Entities
         public void TakeDomage(int domage)
         {
             if (domage < 0)
-                throw new Exception("Domage value must be grater or equal to 0");
+                throw new Exception("Damage value must be grater or equal to 0");
             HealthPoints -= domage;
         }
 

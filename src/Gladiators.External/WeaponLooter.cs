@@ -11,7 +11,7 @@ namespace Gladiator.External
 
         public WeaponLooter()
         {
-            _random = new Random();
+            _random = new DiceRoll();
         }
 
         public WeaponLooter(IRoll random)
